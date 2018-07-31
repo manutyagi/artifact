@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+<!-- <bean id="Point10" class="com.example.pkg.Point"> -->
+<!--  		<constructor-arg value="Hello"/> --> 
+<!--  		<constructor-arg value="2000"/> --> 
+<!--  		<constructor-arg value="1.4"/> --> 
+<!--  		<constructor-arg value="12.5"/> -->
+<!--  	    <property name="x" value="10"/> -->
+<!--  	    <property name="y" value="10"/> -->
+<!-- 		    <constructor-arg index="1" value="12.5"/>  -->
+<!-- 		    <constructor-arg index="0" value="17.5"/>  -->
+		
+<!-- </bean> -->
+
+<!-- <bean id="calc" class="com.example.pkg.Calculator"> -->
+<!-- 	<constructor-arg index="0" value="100"/>  -->
+<!-- 	<constructor-arg index="1" value="5"/>  -->
+<!-- </bean> -->
+<!-- There is no need to use type below though-->
+<!-- <bean id="animal" class="com.example.pkg.Animal"> -->
+<!-- 	<constructor-arg index="0" value="110.34"/>  -->
+<!-- 	<constructor-arg index="1" value="120.53"/>  -->
+<!-- 	<constructor-arg index="2" value="Tibetan Mastiff"/> -->
+<!-- 	<constructor-arg index="3" ref="blackAndWhite"/> To put in value here we will have to create a new bean and use ref tag here -->
+<!-- </bean> -->
+
+<!-- <bean id="animal" class="com.example.pkg.Animal"> -->
+<!-- 	<property name="weight" value="5.6"/> -->
+<!-- </bean> -->
+
+<!-- <bean id="blackAndWhite" class="com.example.pkg.Color"> -->
+<!-- 	<constructor-arg index="0" value="BlackAndWhite"/> -->
+<!-- 	<constructor-arg index="1" value="56"/> -->
+<!-- </bean> -->
+
+<!-- Use of ref in beans example -->
+<!-- <bean id="animal" class="com.example.pkg.Animal"> -->
+<!-- 	<property name="color" ref="blackAndWhite"/> -->
+<!-- </bean> -->
+
+<!-- <bean id="blackAndWhite" class="com.example.pkg.Color"> -->
+<!-- 	<constructor-arg value="BlackAndWhite"/> -->
+<!-- 	<constructor-arg value="56"/> -->
+<!-- </bean> -->
+
+<!--  Inner Bean Example -->
+<!-- <bean id="animal" class="com.example.pkg.Animal"> -->
+<!-- 	<property name="color"> -->
+<!-- 		<bean id="blackAndWhite" class="com.example.pkg.Color"> -->
+<!-- 			<constructor-arg value="BlackAndWhite"/> -->
+<!-- 			<constructor-arg value="56"/> -->
+<!-- 		</bean> -->
+<!-- 	</property> -->
+<!-- </bean> -->
+
+<!--  Inner bean size example -->
+<!-- <bean id="animal" class="com.example.pkg.Animal"> -->
+<!-- 	<property name="size"> -->
+<!-- 		<bean id="blackAndWhite" class="com.example.pkg.Size"> -->
+<!-- 			<constructor-arg index="0" value="12.6"/> -->
+<!-- 			<constructor-arg index="1" value="13.4"/> -->
+<!-- 		</bean> -->
+<!-- 	</property> -->
+<!-- </bean> -->
+
+<!--  idref demo(mainly used for validation purposes -->
+<!-- <bean id="zebra" class="com.example.pkg.Animal"> -->
+<!-- 	<property name="validator"> -->
+<!-- 		<idref bean = "zebra2"/> -->
+<!-- 	</property> -->
+<!-- </bean> -->
+
+<!-- <bean id="zebra2" class="com.example.pkg.Animal"> -->
+<!-- 	<property name="size"> -->
+<!-- 		<bean id="blackAndWhite" class="com.example.pkg.Size"> -->
+<!-- 			<constructor-arg index="0" value="12.6"/> -->
+<!-- 			<constructor-arg index="1" value="13.4"/> -->
+<!-- 		</bean> -->
+<!-- 	</property> -->
+<!-- </bean> -->
+
+<!-- Idref demo(when you try to set an Animal animal type to some value using idref it gives an error) -->
+<!-- <bean id="zebra" class="com.example.pkg.Animal"> -->
+<!-- 	<property name="Animal"> -->
+<!-- 		<idref bean = "zebra2"/> -->
+<!-- 	</property> -->
+<!-- </bean> -->
+
+<!-- <bean id="zebra2" class="com.example.pkg.Animal"> -->
+<!-- 	<property name="size"> -->
+<!-- 		<bean id="blackAndWhite" class="com.example.pkg.Size"> -->
+<!-- 			<constructor-arg index="0" value="12.6"/> -->
+<!-- 			<constructor-arg index="1" value="13.4"/> -->
+<!-- 		</bean> -->
+<!-- 	</property> -->
+<!-- </bean> -->
+
+
+
+<!-- aliases and idref demo -->
+<!-- <bean id="zebra" class="com.example.pkg.Animal"> -->
+	
+<!-- </bean> -->
+
+<!-- <bean id="validatorBean" class="com.example.pkg.BeanValidator"> -->
+<!-- 	<property name="animal1"> -->
+<!-- 	<idref bean ="zebra1"/> -->
+<!-- 	</property> -->
+	
+<!-- 	<property name="animal2"> -->
+<!-- 	<idref bean ="zebra"/> -->
+<!-- 	</property> -->
+	
+<!-- </bean> -->
+
+<!-- <bean id="zebra1" class="com.example.pkg.Animal"> -->
+<!-- 	<property name="size"> -->
+<!-- 		<bean id="blackAndWhite" class="com.example.pkg.Size"> -->
+<!-- 			<constructor-arg index="0" value="12.6"/> -->
+<!-- 			<constructor-arg index="1" value="13.4"/> -->
+<!-- 		</bean> -->
+<!-- 	</property> -->
+<!-- </bean> -->
+<!-- </beans> -->
+
+<!-- Aliases demo -->
+<!-- here if we exchange zebra1 and zebra2 overriding will take place and we will get null pointer exception  -->
+
+<!-- <bean id="zebra1" class ="com.example.pkg.Animal"> -->
+
+<!-- </bean> -->
+
+<!-- <bean id="zebra2" class="com.example.pkg.Animal"> -->
+<!-- 	<property name="size"> -->
+<!-- 		<bean id="blackAndWhite" class="com.example.pkg.Size"> -->
+<!-- 			<constructor-arg index="0" value="12.6"/> -->
+<!-- 			<constructor-arg index="1" value="13.4"/> -->
+<!-- 		</bean> -->
+<!-- 	</property> -->
+<!-- </bean> -->
+
+<!-- <alias name="zebra1" alias="zebra"/> -->
+<!-- <alias name="zebra2" alias="zebra"/> -->
+
+
+<!--  Booby aliases HW -->
+
+<!-- <bean id="zebra1" class="com.example.pkg.Animal"> -->
+<!-- 	<property name="size"> -->
+<!-- 		<bean id="blackAndWhite" class="com.example.pkg.Size"> -->
+<!-- 			<constructor-arg index="0" value="12.6"/> -->
+<!-- 			<constructor-arg index="1" value="13.4"/> -->
+<!-- 		</bean> -->
+<!-- 	</property> -->
+<!-- </bean> -->
+
+<!-- <alias name="zebra1" alias="bobby"/> -->
+
+
+
+<!-- Collection Injection -->
+<!-- <bean id="zebra1" class="com.example.pkg.Animal"> -->
+<!-- 	<property name="names"> -->
+<!-- 	<list> -->
+<!-- 		<value>zebra1</value> -->
+<!-- 		<value>bobby</value> -->
+<!-- 	</list> -->
+<!-- 	</property> -->
+
+
+
+<!-- <bean id="zebra1" class="com.example.pkg.Animal"> -->
+<!-- 	<property name="names"> -->
+<!-- 	<map> -->
+<!-- 		<entry key="1" value="Hello"/> -->
+<!-- 	</map> -->
+<!-- 	</property> -->
+
+<!-- </bean> -->
+
+<!-- Autowiring byName example -->
+<!-- <bean id="zebra1" class="com.example.pkg.Animal" autowire="byName"> -->
+<!-- </bean> -->
+
+<!-- <bean id="color" class="com.example.pkg.Color"> -->
+<!-- 	<property name="colorName" value="blackAndWhite"/> -->
+<!-- 	<property name="colorId" value="2"/> -->
+<!-- </bean> -->
+
+<!-- </beans> -->
+
+<!-- Autowiring byType example -->
+<!-- <bean id="zebra1" class="com.example.pkg.Animal" autowire="byType"> -->
+<!-- </bean> -->
+
+<!-- <bean id="blackAndWhite" class="com.example.pkg.Color"> -->
+<!-- 	<property name="colorName" value="blackAndWhite"/> -->
+<!-- 	<property name="colorId" value="2"/> -->
+<!-- </bean> -->
+<!-- <bean id="blue" class="com.example.pkg.Color"> -->
+<!-- 	<property name="colorName" value="blue"/> -->
+<!-- 	<property name="colorId" value="3"/> -->
+<!-- </bean> -->
+
+
+<!-- By constructor -->
+<!-- <bean id="zebra1" class="com.example.pkg.Animal" autowire="constructor"> -->
+<!-- </bean> -->
+
+<!-- <bean id="blackAndWhite" class="com.example.pkg.Color"> -->
+<!-- 	<property name="colorName" value="blackAndWhite"/> -->
+<!-- 	<property name="colorId" value="2"/> -->
+<!-- </bean> -->
+
+<!-- Autowiring HW -->
+<bean id="zebra1" class="com.example.pkg.Animal" autowire="byName">
+</bean>
+<bean id="zebra2" class="com.example.pkg.Animal" autowire="byType">
+</bean>
+<bean id="zebra3" class="com.example.pkg.Animal" autowire="constructor" autowire-candidate=false>
+</bean>
+
+<bean id="color" class="com.example.pkg.Color">
+	<property name="colorName" value="blackAndWhite"/>
+	<property name="colorId" value="2"/>
+</bean>
+
+</beans>
+
